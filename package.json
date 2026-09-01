@@ -1,0 +1,47 @@
+{
+   "name": "senzu-bot",
+   "version": "5.0-beta",
+   "description": "Simple Whatsapp Bot",
+   "keywords": [
+      "whatsapp-bot",
+      "wabot"
+   ],
+   "homepage": "https://github.com/MelonzHub/senzu-bot#readme",
+   "bugs": {
+      "url": "https://github.com/MelonzHub/senzu-bot/issues"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/MelonzHub/senzu-bot.git"
+   },
+   "license": "MIT",
+   "author": "Melonz Velia",
+   "main": "index.js",
+   "engines": {
+      "node": ">= 22.x"
+   },
+   "directories": {
+      "lib": "lib"
+   },
+   "scripts": {
+      "start": "node index.js --max-old-space-size=1024",
+      "pm2": "pm2 start index.js --name senzu-bot --max-memory-restart 1G -- --max-old-space-size=1024",
+      "server": "node index.js --server"
+   },
+   "dependencies": {
+      "@whiskeysockets/baileys": "v7.0.0-rc14",
+      "@znan/wabot": "github:znanx/wabot#98dff2b696e74db28cc860867ab14779ad9b7047",
+      "archiver": "^7.0.1",
+      "cfonts": "^3.3.0",
+      "express": "^4.21.2",
+      "ignore": "^7.0.0",
+      "node-cron": "^3.0.0",
+      "yt-search": "^2.10.4"
+   },
+   "overrides": {
+      "jimp": "0.22.12"
+   },
+   "resolutions": {
+      "jimp": "0.22.12"
+   }
+}

@@ -1,0 +1,31 @@
+{
+   "owner": "6283185966687",
+   "owner_name": "Melonz Velia",
+   "database": "data",
+   "limit": 10,
+   "multiplier": 250,
+   "min_reward": 100000,
+   "max_reward": 500000,
+   "ram_limit": "1GB",
+   "max_upload": 100,
+   "max_upload_free": 50,
+   "timer": 180000,
+   "timeout": 1800000,
+   "spam": {
+      "mode": "command",
+      "limit": 4,
+      "time_window": 5,
+      "time_ban": 1800,
+      "max_ban": 3,
+      "cooldown": 5
+   },
+   "blocks": ["994", "221", "263", "212"],
+   "evaluate_chars": ["=>", ">", "$", "~>", "!", "+", "/", "#", "."],
+   "pairing": {
+      "state": false,
+      "number": 6283185966687,
+      "code": "SENZUBOT",
+      "browser": ["Ubuntu", "Firefox", "20.0.00"],
+      "version": [2, 3000, 1044308861]
+   }
+}

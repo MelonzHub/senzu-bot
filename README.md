@@ -1,0 +1,76 @@
+# SENZU BOT
+Unofficial WhatsApp bot with modular plugins, built on top of Baileys and `@znan/wabot`.
+
+[![Forks](https://img.shields.io/github/forks/MelonzHub/senzu-bot?style=flat-square)](https://github.com/MelonzHub/senzu-bot/network/members)
+[![Stars](https://img.shields.io/github/stars/MelonzHub/senzu-bot?style=flat-square)](https://github.com/MelonzHub/senzu-bot/stargazers)
+[![License](https://img.shields.io/github/license/MelonzHub/senzu-bot?style=flat-square)](./LICENSE)
+[![Issues](https://img.shields.io/github/issues/MelonzHub/senzu-bot?style=flat-square)](https://github.com/MelonzHub/senzu-bot/issues)
+
+## Documentation
+- Bahasa Indonesia: [`docs/ID.md`](./docs/ID.md)
+- English: [`docs/EN.md`](./docs/EN.md)
+
+## Highlights
+- Plugin-first architecture.
+- Supports command plugins and event plugins.
+- Built-in anti-spam, anti-link, anti-delete, anti-call, and other moderation tools.
+- Auto database save and optional scheduled owner backup.
+- Optional HTTP health server (`npm run server`) for hosting environments.
+
+## Requirements
+- Node.js `>= 22.x`
+- FFmpeg
+- ImageMagick
+- WebP tools
+- WhatsApp account number
+- API key for Alya API (required by API-based features)
+
+## Community & Discussions
+- [Discord](https://discord.gg/CzNkHmhKhG)
+
+## Quick Start
+```bash
+git clone https://github.com/MelonzHub/senzu-bot.git
+cd senzu-bot
+npm install --ignore-scripts
+```
+
+Create `.env` in the project root:
+
+```env
+API_ENDPOINT='https://api.alyachan.dev/api'
+API_KEY='your_api_key'
+DATABASE_URL=''
+TZ='Asia/Jakarta'
+```
+
+Update [`config.json`](./config.json):
+- `owner` and `owner_name`
+- `pairing.number` (your WhatsApp number)
+- `pairing.state` (`true` to use pairing mode)
+- `pairing.version`: Example WhatsApp client version array (e.g. `[2, 3000, 1041168064]`). See [wppconnect WhatsApp versions](https://wppconnect.io/whatsapp-versions) for compatible values.
+
+Run the bot:
+
+```bash
+npm start
+```
+
+## Run Modes
+- `npm start`: run main bot process (auto restart handled by `index.js`).
+- `npm run server`: run bot with HTTP status endpoint from [`server.js`](./server.js).
+- `npm run pm2`: start with PM2 (or use [`pm2.config.js`](./pm2.config.js)).
+
+## Core Structure
+- [`index.js`](./index.js): process bootstrap and auto-restart supervisor.
+- [`main.js`](./main.js): WhatsApp connection, DB init, periodic jobs, listener setup.
+- [`handler.js`](./handler.js): command/event routing and permission checks.
+- `plugins/`: bot features grouped by categories.
+- `lib/system/`: internal helpers, schema, listeners, anti-spam, and models.
+
+## Security
+Please read [`SECURITY.md`](./SECURITY.md) before deploying to production.
+
+## Notes
+- This project is still actively developed.
+- This is an unofficial WhatsApp automation project; use it responsibly and at your own risk.
