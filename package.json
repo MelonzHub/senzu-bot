@@ -33,6 +33,7 @@
       "@znan/wabot": "github:znanx/wabot#98dff2b696e74db28cc860867ab14779ad9b7047",
       "archiver": "^7.0.1",
       "cfonts": "^3.3.0",
+      "dotenv": "^16.4.7",
       "express": "^4.21.2",
       "ignore": "^7.0.0",
       "node-cron": "^3.0.0",
